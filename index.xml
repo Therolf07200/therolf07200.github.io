@@ -16,7 +16,7 @@
       <description>个人blog搭建 hugo linux平台安装
 sudo apt install hugo start hugo new site &amp;lt;myblog&amp;gt; #dir_name cd myblog themes 官网 git clone theme 本地启动 hugo server -t m10c --buildDrafts   theme 以m10c为例
   Ctrl +C 结束
-  编写 hugo new post/blog.md  directory: content/post/blog.md  部署 hugo --theme=m10c --baseUrl=&amp;#34;https://therolf07200.github.io/&amp;#34; --buildDrafts  产生public文件夹  git cd public git init git add . git commit -m &amp;#34;MASSAGE&amp;#34; git remote add origin https://github.com/Therolf07200/therolf07200.github.io.git git push -u origin master lalla</description>
+  编写 hugo new post/blog.md  directory: content/post/blog.md  部署 hugo --theme=m10c --baseUrl=&amp;#34;https://therolf07200.github.io/&amp;#34; --buildDrafts  产生public文件夹  git cd public git init git add . git commit -m &amp;#34;MASSAGE&amp;#34; git remote add origin https://github.com/Therolf07200/therolf07200.github.io.git git push -u origin master git 小技巧 $ git config credential.</description>
     </item>
     
   </channel>
