@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title> // 林永晖</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://therolf07200.github.io/css/main.min.4a7ec8660f9a44b08c4da97c5f2e31b1192df1d4d0322e65c0dbbc6ecb1b863f.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="GDB 官网 GDB: The GNU Project Debugger (sourceware.org)
+GDB是什么东西？ GDB, the GNU Project debugger, allows you to see what is going on `inside&#39; another program while it executes &ndash; or what another program was doing at the moment it crashed.
+GDB can do four main kinds of things (plus other things in support of these) to help you catch bugs in the act:
+ Make your program stop on specified conditions."/>
+
+    <meta property="og:title" content="" />
+<meta property="og:description" content="GDB 官网 GDB: The GNU Project Debugger (sourceware.org)
+GDB是什么东西？ GDB, the GNU Project debugger, allows you to see what is going on `inside&#39; another program while it executes &ndash; or what another program was doing at the moment it crashed.
+GDB can do four main kinds of things (plus other things in support of these) to help you catch bugs in the act:
+ Make your program stop on specified conditions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://therolf07200.github.io/post/gdb/" /><meta property="article:section" content="post" />
+
+
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://therolf07200.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>林永晖</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title"></h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 1, 0001
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="gdb">GDB</h1>
+<p>官网 <a href="https://sourceware.org/gdb/">GDB: The GNU Project Debugger (sourceware.org)</a></p>
+<h1 id="gdb是什么东西">GDB是什么东西？</h1>
+<p>GDB, the GNU Project debugger, allows you to see what is going on `inside' another program while it executes &ndash; or what another program was doing at the moment it crashed.</p>
+<p>GDB can do four main kinds of things (plus other things in support of these) to help you catch bugs in the act:</p>
+<ul>
+<li>Make your program stop on specified conditions.</li>
+<li>Start your program, specifying anything that might affect its behavior.</li>
+<li>Examine what has happened, when your program has stopped.</li>
+<li>Change things in your program, so you can experiment with correcting the effects of one bug and go on to learn about another.</li>
+</ul>
+<p>Those programs might be executing on the same machine as GDB (native), on another machine (remote), or on a simulator. GDB can run on most popular UNIX and Microsoft Windows variants, as well as on Mac OS X.</p>
+<h1 id="what-languages-does-gdb-support">What Languages does GDB Support?</h1>
+<p>GDB supports the following languages (in alphabetical order):</p>
+<ul>
+<li>Ada</li>
+<li>Assembly</li>
+<li>C</li>
+<li>C++</li>
+<li>D</li>
+<li>Fortran</li>
+<li>Go</li>
+<li>Objective-C</li>
+<li>OpenCL</li>
+<li>Modula-2</li>
+<li>Pascal</li>
+<li>Rust</li>
+</ul>
+<blockquote>
+<p>搭建实验环境</p>
+</blockquote>
+<p>安装GDB</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install gdb
+</code></pre></div><p>检查GDB是否成功安装</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gdb --version
+</code></pre></div><h1 id="quickstart">Quickstart</h1>
+<p><a href="https://sourceware.org/gdb/current/onlinedocs/gdb/">Top (Debugging with GDB) (sourceware.org)</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#960050;background-color:#1e0010">g++</span> <span style="color:#960050;background-color:#1e0010">-g</span> <span style="color:#960050;background-color:#1e0010">$^</span> <span style="color:#960050;background-color:#1e0010">-o</span> <span style="color:#66d9ef">$@</span>
+</code></pre></div><h2 id="command">Command</h2>
+<ul>
+<li>run r 运行程序</li>
+<li>quit q 退出程序</li>
+<li>break b 打断点
+<ul>
+<li>b main</li>
+<li>b 行号</li>
+<li>info b 查看断点的情况</li>
+</ul>
+</li>
+<li>list 查看source code</li>
+<li>next n 单步运行</li>
+<li>print p 打印变量
+<ul>
+<li>p variable</li>
+<li>p &amp;variable</li>
+</ul>
+</li>
+<li>step s 单步运行 进函数</li>
+</ul>
+<blockquote>
+<p>gdb骚操作</p>
+</blockquote>
+<p>1 shell 调用terminal的命令</p>
+<p>2 日志功能</p>
+<p>set logging on</p>
+<p>3 watchpoint</p>
+<p>观察变量是否变化</p>
+<p>watch variable</p>
+<p>info 来查看watchpoint</p>
+<blockquote>
+<p>调试程序</p>
+</blockquote>
+<p>调试一个程序 core</p>
+<p>shell会做一些限制</p>
+<p>core文件不会默认生成</p>
+<p>ulimit -a</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ulimit -c unlimited
+</code></pre></div><p>gdb $(TARGET) core.XXXXX</p>
+<p><code>4 checkpoint</code></p>
+<h2 id="调试运行中的程序">调试运行中的程序</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">g++ a.out -g  //编译
+./a,out &amp;  //后台运行 &amp;
+	<span style="color:#f92672">[</span>X<span style="color:#f92672">]</span> XXXXX<span style="color:#f92672">(</span>pid<span style="color:#f92672">)</span> //返回一个进程号
+gdb -p XXXXX<span style="color:#f92672">(</span>pid<span style="color:#f92672">)</span>
+
+//进程号忘记:
+ps -ef | grep a.out
+
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
