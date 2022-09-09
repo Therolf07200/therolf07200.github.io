@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title> // 林永晖</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://therolf07200.github.io/css/main.min.4a7ec8660f9a44b08c4da97c5f2e31b1192df1d4d0322e65c0dbbc6ecb1b863f.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="VIM 官网：welcome home : vim online
+设置 .vimrc
+插件
+基本操作 移动 光标上移 ：k
+光标左移 ：h
+移动到行首 ：0
+移动到行首词 ：^
+光标下移 ：j
+光标右移 ：l
+移动到行尾：$
+数字键 &#43; 移动键，比如： 6j ， 代表向下移动6行
+3- / 3&#43; 分别代表上移、下移3行行首
+3$ / 3$ 分别代表上移、下移3行行尾
+ 移动到下一个词的词首 移动到下一个大词的词首 移动到下一个词的词尾 移动到下一个大词的词尾 移动到上一个词的词首 移动到上一个大词的词首  w
+W
+e
+E
+b
+B
+ 选中1整个单词 ：bve （可视化的选择）
+ 跳转 跳转到文件第一行 ： gg
+跳转到文件最后一行： G
+上下翻页 ：Ctrl &#43; u；Ctrl &#43; d
+上下滚动 ：Ctrl &#43; e；Ctrl &#43; y"/>
+
+    <meta property="og:title" content="" />
+<meta property="og:description" content="VIM 官网：welcome home : vim online
+设置 .vimrc
+插件
+基本操作 移动 光标上移 ：k
+光标左移 ：h
+移动到行首 ：0
+移动到行首词 ：^
+光标下移 ：j
+光标右移 ：l
+移动到行尾：$
+数字键 &#43; 移动键，比如： 6j ， 代表向下移动6行
+3- / 3&#43; 分别代表上移、下移3行行首
+3$ / 3$ 分别代表上移、下移3行行尾
+ 移动到下一个词的词首 移动到下一个大词的词首 移动到下一个词的词尾 移动到下一个大词的词尾 移动到上一个词的词首 移动到上一个大词的词首  w
+W
+e
+E
+b
+B
+ 选中1整个单词 ：bve （可视化的选择）
+ 跳转 跳转到文件第一行 ： gg
+跳转到文件最后一行： G
+上下翻页 ：Ctrl &#43; u；Ctrl &#43; d
+上下滚动 ：Ctrl &#43; e；Ctrl &#43; y" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://therolf07200.github.io/post/vim-7190be0a1b8a4759b0d6e5b1fa6ca951/" /><meta property="article:section" content="post" />
+
+
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://therolf07200.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>林永晖</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title"></h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 1, 0001
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="vim">VIM</h1>
+<p>官网：<a href="https://www.vim.org/">welcome home : vim online</a></p>
+<p><a href="VIM%207190be0a1b8a4759b0d6e5b1fa6ca951/%E8%AE%BE%E7%BD%AE%20vimrc%200aa310dc27b44c1ca78db4ca421bd1db.md">设置 .vimrc</a></p>
+<p><a href="VIM%207190be0a1b8a4759b0d6e5b1fa6ca951/%E6%8F%92%E4%BB%B6%2087fabf1b2f0a470188863b310353a25b.md">插件</a></p>
+<h1 id="基本操作">基本操作</h1>
+<h2 id="移动">移动</h2>
+<p>光标上移 ：k</p>
+<p>光标左移 ：h</p>
+<p>移动到行首 ：0</p>
+<p>移动到行首词 ：^</p>
+<p>光标下移 ：j</p>
+<p>光标右移 ：l</p>
+<p>移动到行尾：$</p>
+<p>数字键 + 移动键，比如： 6j ， 代表向下移动6行</p>
+<p>3- / 3+ 分别代表上移、下移3行行首</p>
+<p>3$ / 3$ 分别代表上移、下移3行行尾</p>
+<ul>
+<li>移动到下一个词的词首</li>
+<li>移动到下一个大词的词首</li>
+<li>移动到下一个词的词尾</li>
+<li>移动到下一个大词的词尾</li>
+<li>移动到上一个词的词首</li>
+<li>移动到上一个大词的词首</li>
+</ul>
+<p>w</p>
+<p>W</p>
+<p>e</p>
+<p>E</p>
+<p>b</p>
+<p>B</p>
+<blockquote>
+<p>选中1整个单词  ：bve   （可视化的选择）</p>
+</blockquote>
+<h2 id="跳转">跳转</h2>
+<p>跳转到文件第一行 ： gg</p>
+<p>跳转到文件最后一行：  G</p>
+<p>上下翻页 ：Ctrl + u；Ctrl + d</p>
+<p>上下滚动 ：Ctrl + e；Ctrl + y</p>
+<h2 id="删除修改">删除、修改</h2>
+<ol>
+<li>删除一个字符：  x</li>
+<li>删除一个词：  dw 、 bvex（可视化的删除）</li>
+<li>删除一个词，并等待输入 ： cw = dwi（也可以选中单词，再c）</li>
+<li>删除一个词，并等待输入 ： ciw  或 ciW</li>
+</ol>
+<h2 id="缩进">缩进</h2>
+<ol>
+<li>换行缩进   :set cindent</li>
+<li>设置tab键显示大小  :set ts=4   :set sw=4   :set et  noet</li>
+<li>V(行选中)  =  自动缩进、&raquo; 、&gt;i {</li>
+<li>设置filetype on    filetype plugin on    filetype indent on</li>
+<li>vimrc里输入“来注释</li>
+<li></li>
+</ol>
+<h2 id="插入">插入</h2>
+<ol>
+<li>I    行首（^）插入</li>
+<li>i    当前字符前边插入（insert）</li>
+<li>a   当前字符后边插入（append）</li>
+<li>A   行尾插入</li>
+<li>在网站复制的文字，进入vim，先i，用Shift + Insert 粘贴</li>
+<li>交换两行 ddp</li>
+<li></li>
+</ol>
+<h2 id="可视化模式">可视化模式</h2>
+<ol>
+<li>q + u（宏的名称） +  操作：（xj）→  @ + u (调用刚才保存在u的操作)（4 + @ + u 或4 + @ + @ ）</li>
+<li>v/V + j（选中行） + : norm 0x（跳到行首，删除一个字符）+Enter</li>
+</ol>
+<h2 id="查找">查找</h2>
+<ol>
+<li>/ + ”想要查找的单词”  →  n 下一个、N 上一个</li>
+<li>？+ ”想要查找的单词”  →  n 上一个、N 下一个</li>
+<li>光标停在某一个单词上，按 #   → 向下查找(同 1 )，可以先bve，viw</li>
+<li>光标停在某一个单词上，按 *   → 向上查找(同 2 )，可以先bve，viw</li>
+<li>f + “想要查找的单词” ，自动跳转到此单词处，按 ；下一个</li>
+<li>结合5，可使用 c+f+字符 ，将 <strong>字符</strong> 到行首的内容全部删掉，并等待输入</li>
+<li>t + “想要查找的单词” ，自动跳转到此单词前一位，按 ；下一个</li>
+<li>结合5，可使用 c+t+字符 ，将 <strong>字符前</strong> 到行首的内容全部删掉，并等待输入</li>
+</ol>
+<h2 id="替换">替换</h2>
+<ol>
+<li>:s/单词1/单词2   （只换第一个）</li>
+<li>:s/单词1/单词2/g   （多次替换、全换）</li>
+<li>:%s/单词1/单词2/g   （全换）</li>
+<li>:%s/<strong>usr/lib</strong>/<strong>lib</strong>/g   （usr/lib全换成lib）</li>
+<li></li>
+</ol>
+<h2 id="设置基本命令参数">设置基本命令参数（:）</h2>
+<p>显示行号</p>
+<p>启用鼠标</p>
+<p>退出/保存退出</p>
+<p>set number</p>
+<p>set mouse=a</p>
+<p>q / q! / wq / wq!</p>
+<h2 id="运行">运行</h2>
+<ol>
+<li></li>
+</ol>
+<blockquote>
+<p>:sh Enter     进入临时terminal</p>
+<p>g++ XXXXXXX(命令)</p>
+<p>d 退出临时terminal</p>
+</blockquote>
+<ol>
+<li>:!g++ XXXXXXXX(命令)  其中可以使用%代替当前文件名</li>
+</ol>
+<blockquote>
+<p>:make (在vim内部运行make)：</p>
+</blockquote>
+<p>cw 将会显示一个调错窗口，双击将会跳转到出错的那一行</p>
+<p>Ctrl + i ; Ctrl + o 进出 .h .cpp</p>
+<p>使用  :ls  查看当前一打开的所有缓冲区</p>
+<p>b数字，可以打来对应号缓冲</p>
+<p>:gd  可以跳转到函数的定义</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

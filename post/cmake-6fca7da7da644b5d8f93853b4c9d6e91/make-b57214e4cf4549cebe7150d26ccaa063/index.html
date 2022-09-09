@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title> // 林永晖</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://therolf07200.github.io/css/main.min.4a7ec8660f9a44b08c4da97c5f2e31b1192df1d4d0322e65c0dbbc6ecb1b863f.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="make Makefile 构建系统，依赖关系链
+ 文件越来越多时，一个个调用g&#43;&#43;编译链会变得很麻烦 于是，发明了make程序，只需要编写文件间的依赖关系，和生成各文件的规则 command：make a.out 与用shell脚本直接写构建过程相比，make指明依赖关系的好处：   当更新 XXX.cpp 文件时只会编译XXX.o，而不需要把其他.cpp 文件重新编译 能自动并行地发起对.cpp的编译，加快编译速度 make -j 使用通配符批量生成构建规则，避免针对每个.cpp 与 .o 重复写g&#43;&#43;(%o %.cpp)   但坏处也很明显   make在类Unix系统上是通用的，但在Windows上则不然 需要明确指明每个项目间的依赖关系，有头文件时特别头疼 make语法特别简单，不像shell或python可以做很多判断 不同编译器有不同的flag规则，为g&#43;&#43;准备的参数可能对msvc不适用  "/>
+
+    <meta property="og:title" content="" />
+<meta property="og:description" content="make Makefile 构建系统，依赖关系链
+ 文件越来越多时，一个个调用g&#43;&#43;编译链会变得很麻烦 于是，发明了make程序，只需要编写文件间的依赖关系，和生成各文件的规则 command：make a.out 与用shell脚本直接写构建过程相比，make指明依赖关系的好处：   当更新 XXX.cpp 文件时只会编译XXX.o，而不需要把其他.cpp 文件重新编译 能自动并行地发起对.cpp的编译，加快编译速度 make -j 使用通配符批量生成构建规则，避免针对每个.cpp 与 .o 重复写g&#43;&#43;(%o %.cpp)   但坏处也很明显   make在类Unix系统上是通用的，但在Windows上则不然 需要明确指明每个项目间的依赖关系，有头文件时特别头疼 make语法特别简单，不像shell或python可以做很多判断 不同编译器有不同的flag规则，为g&#43;&#43;准备的参数可能对msvc不适用  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://therolf07200.github.io/post/cmake-6fca7da7da644b5d8f93853b4c9d6e91/make-b57214e4cf4549cebe7150d26ccaa063/" /><meta property="article:section" content="post" />
+
+
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://therolf07200.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>林永晖</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title"></h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 1, 0001
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="make">make</h1>
+<h2 id="makefile">Makefile</h2>
+<p>构建系统，依赖关系链</p>
+<ul>
+<li>文件越来越多时，一个个调用g++编译链会变得很麻烦</li>
+<li>于是，发明了make程序，只需要编写文件间的依赖关系，和生成各文件的规则</li>
+<li>command：make a.out</li>
+<li>与用shell脚本直接写构建过程相比，make指明依赖关系的好处：</li>
+</ul>
+<ol>
+<li>当更新 XXX.cpp 文件时只会编译XXX.o，而不需要把其他.cpp 文件重新编译</li>
+<li>能自动<strong>并行</strong>地发起对.cpp的编译，加快编译速度  make -j</li>
+<li>使用通配符批量生成构建规则，避免针对每个.cpp 与 .o 重复写g++(%o %.cpp)</li>
+</ol>
+<ul>
+<li>但坏处也很明显</li>
+</ul>
+<ol>
+<li>make在类Unix系统上是通用的，但在Windows上则不然</li>
+<li>需要明确指明每个项目间的依赖关系，有头文件时特别头疼</li>
+<li>make语法特别简单，不像shell或python可以做很多判断</li>
+<li>不同编译器有不同的flag规则，为g++准备的参数可能对msvc不适用</li>
+</ol>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
