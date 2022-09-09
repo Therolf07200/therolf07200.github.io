@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title> // 林永晖</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://therolf07200.github.io/css/main.min.4a7ec8660f9a44b08c4da97c5f2e31b1192df1d4d0322e65c0dbbc6ecb1b863f.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Gnuplot 官网：http://www.gnuplot.info/
+参数   with
+  Point
+  LineType(lt)
+  LineWidth(lw)
+  Line
+  LinePoints(lp)
+  PointType(pt)
+  PointSize(ps)
+  坐标设置  [X:X] [X:X] set xrange [x1 : x2] set xlabel “x name” 设置x轴轴标，同样可设置y轴 set xtics 1.0 设置x轴主刻度，同样可设置y轴 set mxtics 2 x轴上每个主刻度中画2个分刻度，同样可以为y轴定义mytics set border 3 设为第三种边界，同样可以为上边的x轴（称为x2）和右边y（称为y2）轴进行设置，即x2tics，mx2tics，y2tics，my2tics set xtics nomirror 去掉上边x的刻度，同样可以为ytics设置 unset x2tics 去掉上边x的刻度，同样可以为ytics设置 set size square 设置x，y轴等长 set size 0.5,0.5 //设置图形的大小各为一半 plot sin(x) axes x1y2   图例位置  set key &#43;(left / right / bottom / outside / ) set title “图名” set label ‘一段文字’ at x , y  添加图形  set arrow from x1,y1 to x2,y2 set arrow from x1,y1 to x2,y2 nuhead  设置图片格式  set size 0."/>
+
+    <meta property="og:title" content="" />
+<meta property="og:description" content="Gnuplot 官网：http://www.gnuplot.info/
+参数   with
+  Point
+  LineType(lt)
+  LineWidth(lw)
+  Line
+  LinePoints(lp)
+  PointType(pt)
+  PointSize(ps)
+  坐标设置  [X:X] [X:X] set xrange [x1 : x2] set xlabel “x name” 设置x轴轴标，同样可设置y轴 set xtics 1.0 设置x轴主刻度，同样可设置y轴 set mxtics 2 x轴上每个主刻度中画2个分刻度，同样可以为y轴定义mytics set border 3 设为第三种边界，同样可以为上边的x轴（称为x2）和右边y（称为y2）轴进行设置，即x2tics，mx2tics，y2tics，my2tics set xtics nomirror 去掉上边x的刻度，同样可以为ytics设置 unset x2tics 去掉上边x的刻度，同样可以为ytics设置 set size square 设置x，y轴等长 set size 0.5,0.5 //设置图形的大小各为一半 plot sin(x) axes x1y2   图例位置  set key &#43;(left / right / bottom / outside / ) set title “图名” set label ‘一段文字’ at x , y  添加图形  set arrow from x1,y1 to x2,y2 set arrow from x1,y1 to x2,y2 nuhead  设置图片格式  set size 0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://therolf07200.github.io/post/programming-/gnuplot-6b07df5db7ee43f7801b8ab7e5c08f94/" /><meta property="article:section" content="post" />
+
+
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://therolf07200.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>林永晖</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title"></h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 1, 0001
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="gnuplot">Gnuplot</h1>
+<p>官网：<a href="Gnuplot%206b07df5db7ee43f7801b8ab7e5c08f94.md">http://www.gnuplot.info/</a></p>
+<h2 id="参数">参数</h2>
+<ul>
+<li>
+<p>with</p>
+</li>
+<li>
+<p>Point</p>
+</li>
+<li>
+<p>LineType(lt)</p>
+</li>
+<li>
+<p>LineWidth(lw)</p>
+</li>
+<li>
+<p>Line</p>
+</li>
+<li>
+<p>LinePoints(lp)</p>
+</li>
+<li>
+<p>PointType(pt)</p>
+</li>
+<li>
+<p>PointSize(ps)</p>
+</li>
+</ul>
+<h2 id="坐标设置">坐标设置</h2>
+<ul>
+<li>[X:X] [X:X]</li>
+<li>set xrange [x1 : x2]</li>
+<li>set xlabel “x name”  设置x轴轴标，同样可设置y轴</li>
+<li>set xtics 1.0   设置x轴主刻度，同样可设置y轴</li>
+<li>set mxtics 2   x轴上每个主刻度中画2个分刻度，同样可以为y轴定义mytics</li>
+<li>set border 3  设为第三种边界，同样可以为上边的x轴（称为x2）和右边y（称为y2）轴进行设置，即x2tics，mx2tics，y2tics，my2tics</li>
+<li>set xtics nomirror   去掉上边x的刻度，同样可以为ytics设置</li>
+<li>unset x2tics   去掉上边x的刻度，同样可以为ytics设置</li>
+<li>set size square  设置x，y轴等长</li>
+<li>set size 0.5,0.5   <em>//设置图形的大小各为一半</em></li>
+<li>plot sin(x) axes x1y2</li>
+<li></li>
+</ul>
+<h2 id="图例位置">图例位置</h2>
+<ul>
+<li>set key +(left / right / bottom / outside / )</li>
+<li>set title “图名”</li>
+<li>set label ‘一段文字’ at x , y</li>
+</ul>
+<h2 id="添加图形">添加图形</h2>
+<ul>
+<li>set arrow from x1,y1 to x2,y2</li>
+<li>set arrow from x1,y1 to x2,y2 nuhead</li>
+</ul>
+<h2 id="设置图片格式">设置图片格式</h2>
+<ul>
+<li>set size 0.5,0.5   <em>//长宽均为默认宽度的一半，建议用这个取值，尤其是画成ps或eps图形的时候</em></li>
+<li>set origin x , y   <em>//设定图的最左下角的那一点在图形面板中的位置。这里图将出现在左上角</em></li>
+</ul>
+<h2 id="多图模式">多图模式</h2>
+<ul>
+<li>set multiplot</li>
+<li></li>
+</ul>
+<h2 id="动图">动图</h2>
+<pre tabindex="0"><code>set term gif animate
+//设置可以画动画
+set output &quot;e1.gif&quot;
+//设置输出的文件路径
+set xrange [0:4*pi]
+set yrange [-1:1]
+//设置x,y范围
+do for [i=0:40]{
+  plot sin(x+i*pi/40) lw 1.5 title sprintf(&quot;t=%i&quot;,i)
+}
+//循环输出图像
+set output
+</code></pre>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title> // 林永晖</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://therolf07200.github.io/css/main.min.4a7ec8660f9a44b08c4da97c5f2e31b1192df1d4d0322e65c0dbbc6ecb1b863f.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="OpenFOAM编程 g&#43;&#43;的使用方法 预处理、编译、汇编和链接 预处理 g&#43;&#43; -E test.cpp -o test.i 编译 g&#43;&#43; -S test.i -o test.s 汇编 g&#43;&#43; -c test.s -o test.o 链接 g&#43;&#43; test.o -o test 这里面的逻辑要思考一下
+g&#43;&#43;重要编译参数 g 编译带调试信息的可执行文件 # -g 选项告诉GCC产生能被GNU调试器GDB使用的调试信息 g&#43;&#43; -g test.cpp -o test O[n] 优化源代码 ## 优化源代码。 # -O 告诉g&#43;&#43;对源代码进行基本优化。 # -O0 表示不做优化 # -O1 表示默认优化 # -O2 表示完成O1优化之外，还进行一些额外的调整工作 # -O3 表示包括循环展开和其他一些预处理相关的特性工作 g&#43;&#43; -O2 test.cpp -o test # 注意看看文件夹的inefficiency的demo,时间差距有1000倍 l和L制定库文件和库文件路径 # -l参数就是用来指定程序要链接的库，-l参数紧跟着就是库名 # 在`/lib, /usr/lib, /usr/local/lib`里的库直接用-l参数就能链接 # 链接glog库 g&#43;&#43; -lglog test."/>
+
+    <meta property="og:title" content="" />
+<meta property="og:description" content="OpenFOAM编程 g&#43;&#43;的使用方法 预处理、编译、汇编和链接 预处理 g&#43;&#43; -E test.cpp -o test.i 编译 g&#43;&#43; -S test.i -o test.s 汇编 g&#43;&#43; -c test.s -o test.o 链接 g&#43;&#43; test.o -o test 这里面的逻辑要思考一下
+g&#43;&#43;重要编译参数 g 编译带调试信息的可执行文件 # -g 选项告诉GCC产生能被GNU调试器GDB使用的调试信息 g&#43;&#43; -g test.cpp -o test O[n] 优化源代码 ## 优化源代码。 # -O 告诉g&#43;&#43;对源代码进行基本优化。 # -O0 表示不做优化 # -O1 表示默认优化 # -O2 表示完成O1优化之外，还进行一些额外的调整工作 # -O3 表示包括循环展开和其他一些预处理相关的特性工作 g&#43;&#43; -O2 test.cpp -o test # 注意看看文件夹的inefficiency的demo,时间差距有1000倍 l和L制定库文件和库文件路径 # -l参数就是用来指定程序要链接的库，-l参数紧跟着就是库名 # 在`/lib, /usr/lib, /usr/local/lib`里的库直接用-l参数就能链接 # 链接glog库 g&#43;&#43; -lglog test." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/openfoam%E7%BC%96%E7%A8%8B-fe5261ff400142f59859c40bb0542395/" /><meta property="article:section" content="post" />
+
+
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://therolf07200.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>林永晖</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title"></h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 1, 0001
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          4 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="openfoam编程">OpenFOAM编程</h1>
+<h1 id="g的使用方法"><code>g++</code>的使用方法</h1>
+<h2 id="预处理编译汇编和链接">预处理、编译、汇编和链接</h2>
+<h3 id="预处理">预处理</h3>
+<pre tabindex="0"><code>g++ -E test.cpp -o test.i
+</code></pre><h3 id="编译">编译</h3>
+<pre tabindex="0"><code>g++ -S test.i -o test.s
+
+</code></pre><h3 id="汇编">汇编</h3>
+<pre tabindex="0"><code>g++ -c test.s -o test.o
+
+</code></pre><h3 id="链接">链接</h3>
+<pre tabindex="0"><code>g++ test.o -o test
+
+</code></pre><p>这里面的逻辑要思考一下</p>
+<h2 id="g重要编译参数"><code>g++</code>重要编译参数</h2>
+<h3 id="g-编译带调试信息的可执行文件"><code>g</code> 编译带调试信息的可执行文件</h3>
+<pre tabindex="0"><code># -g 选项告诉GCC产生能被GNU调试器GDB使用的调试信息
+
+g++ -g test.cpp -o test
+
+</code></pre><h3 id="on-优化源代码"><code>O[n]</code> 优化源代码</h3>
+<pre tabindex="0"><code>## 优化源代码。
+
+# -O 告诉g++对源代码进行基本优化。
+# -O0 表示不做优化
+# -O1 表示默认优化
+# -O2 表示完成O1优化之外，还进行一些额外的调整工作
+# -O3 表示包括循环展开和其他一些预处理相关的特性工作
+
+g++ -O2 test.cpp -o test
+# 注意看看文件夹的inefficiency的demo,时间差距有1000倍
+
+</code></pre><h3 id="l和l制定库文件和库文件路径"><code>l</code>和<code>L</code>制定库文件和库文件路径</h3>
+<pre tabindex="0"><code># -l参数就是用来指定程序要链接的库，-l参数紧跟着就是库名
+# 在`/lib, /usr/lib, /usr/local/lib`里的库直接用-l参数就能链接
+
+# 链接glog库
+g++ -lglog test.cpp
+
+# 如果库文件没有在上面三个目录，则需要指定库文件所在目录# -L参数跟着库文件所在的目录名
+
+# 链接mytest库，libmytest.so在/home/cfd-wy/Desktop/mytestlib目录下
+g++ -L/home/cfd-wy/Desktop/mytestlib -lmytest test.cpp -o test
+
+</code></pre><h3 id="i指定头文件搜索目录"><code>I</code>指定头文件搜索目录</h3>
+<pre tabindex="0"><code># -I
+# /usr/include目录一般是不用指定的，gcc知道哪里找。但是如果头文件不在这个目录里面，我们就要用-I参数指定了。-I可以使用相对路径
+
+g++ -I/myinclude test.cpp -o test
+
+</code></pre><h3 id="wall打开警告信息"><code>Wall</code>打开警告信息</h3>
+<pre tabindex="0"><code>g++ -Wall test.cpp -o test
+
+</code></pre><h3 id="w关闭警告信息"><code>w</code>关闭警告信息</h3>
+<pre tabindex="0"><code>g++ -w test.cpp -o test
+
+</code></pre><h3 id="-stdc11设置编译标准">`-std=c++11``设置编译标准</h3>
+<pre tabindex="0"><code>g++ -std=c++11 test.cpp -o test
+
+</code></pre><h3 id="o制定输出文件名"><code>o</code>制定输出文件名</h3>
+<h3 id="d定义宏"><code>D</code>定义宏</h3>
+<pre tabindex="0"><code># 在使用gcc/g++编译时定义宏
+
+# 常用场景
+
+# -DDEBUG定义DEBUG宏，可能文件中有DEBUG宏部分的相关信息，用个DDEBUG来选择开启或关闭DEBUG
+
+</code></pre><p>示例代码</p>
+<pre tabindex="0"><code>// -Dname 定义宏name，默认定义内容为字符串&quot;1&quot;
+
+#include &lt;stdio.h&gt;
+
+int main() {
+	#ifdef DEBUG
+		printf(&quot;DEBUG LOG\\n&quot;);
+	#endif
+		printf(&quot;in\\n&quot;);
+}
+
+</code></pre><h2 id="实例操作">实例操作</h2>
+<h3 id="直接在命令行中输入参数">直接在命令行中输入参数</h3>
+<pre tabindex="0"><code>g++ main.cpp src/swap.cpp -Iinclude -o wangyang
+g++ main.cpp src/swap.cpp -Iinclude -Wall -std=c++11 -o wangyang
+
+</code></pre><h3 id="生成库文件并编译">生成库文件并编译</h3>
+<p>链接<strong>静态库</strong>生产可执行文件</p>
+<pre tabindex="0"><code>$cd src
+$g++ swap.cpp -c -I../include
+$ar rs libswap.a swap.o
+$cd ..
+$g++ main.cpp -Lsrc -lswap -Iinclude -o wangyang
+
+</code></pre><p>链接<strong>动态库</strong>生成可执行文件</p>
+<pre tabindex="0"><code>$cd src
+$g++ swap.cpp -I../include -fPIC -shared -o libswap.so
+# position independence code
+$cd ..
+$g++ main.cpp -Iinclude -Lsrc -lswap -o wangyang
+
+</code></pre><p>这里生成的<code>wangyang</code>执行时会报错，链接不到动态库。两种办法解决</p>
+<pre tabindex="0"><code>$export LD_LIBRARY_PATH=src/:$LD_LIBRARY_PATH
+# 或者
+$LD_LIBRARY_PATH=src ./wangyang
+
+</code></pre><h2 id="gdb调试器"><code>GDB</code>调试器</h2>
+<h3 id="常用命令参数">常用命令参数</h3>
+<ul>
+<li><code>GDB</code>(GNU Debugger)是一个用来调试<code>C/C++</code>程序的功能强大的调试器，是<code>Linux</code>系统开发<code>C/C++</code>最常用的调试器</li>
+<li>学会用调试器，可以减少工作量</li>
+</ul>
+<p><strong>GDB主要功能</strong></p>
+<ul>
+<li>设置断点</li>
+<li>观察制定位置的程序执行</li>
+<li>单步执行程序，便于调试</li>
+<li>查看变量值的变化</li>
+<li>动态改变程序的执行环境</li>
+<li>分析崩溃程序产生的执行文件</li>
+</ul>
+<h3 id="常用调试命令参数">常用调试命令参数</h3>
+<p>调试执行，执行<code>GDB [exefilename]</code>，进入gdb调试程序</p>
+<pre tabindex="0"><code>$(gdb)help(h)
+
+$(gdb)run(r)
+
+$(gdb)start
+
+$(gdb)list(l)
+
+$(gdb)set
+
+$(gdb)next(n) # 单步调试，逐过程
+
+$(gdb)step(s) # 单步调试，逐语句
+
+$(gdb)backtrace(bt)
+
+$(gdb)frame(f)
+
+$(gdb)info(i)
+
+$(gdb)finish
+
+$(gdb)continue(c)
+
+$(gdb)print(p)
+
+$(gdb)quit(q)
+
+</code></pre><pre tabindex="0"><code>$(gdb)break+num(b)
+
+$(gdb)info breakpoints
+
+$(gdb)delte breakpoints num(d)
+
+$(gdb)display
+
+$(gdb)undisplay
+
+$(gdb)watch
+
+$(gdb)i watch
+
+$(gdb)enable breakpoints
+
+$(gdb)disable breakpoints
+
+$(gdb)x
+
+$(gdb)run argv[1] argv[2]
+
+$(gdb)set follow-fork-mode child
+
+</code></pre><blockquote>
+<p>Tips:</p>
+<ol>
+<li>编译程序必须添加<code>g</code>选项，不然没用</li>
+<li>回车键，重复上一条命令</li>
+</ol>
+</blockquote>
+<h3 id="命令行调试">命令行调试</h3>
+<pre tabindex="0"><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main(int argc, char *argv[]) {
+  int N = 100;
+  int sum = 0;
+  int i = 1;
+
+  // calculate sum from 1 to 100
+  while (i &lt;= N) {
+    sum = sum + i;
+    i = i + 1;
+  }
+
+  cout &lt;&lt; &quot;sum = &quot; &lt;&lt; sum &lt;&lt; endl;
+  cout &lt;&lt; &quot;The program is over.&quot; &lt;&lt; endl;
+
+  return 0;
+}
+
+</code></pre><h3 id="快捷键">快捷键</h3>
+<p><img src="https://www.notion.so./vscode.png" alt="https://www.notion.so./vscode.png"></p>
+<p><a href="OpenFOAM%E7%BC%96%E7%A8%8B%20fe5261ff400142f59859c40bb0542395/Untitled%20Database%20b40f43c4b99447d58ff74cc202371705.csv">Untitled</a></p>
+<p><strong>在Ctrl+p</strong>窗口下还可以:</p>
+<ul>
+<li>直接输入文件名，跳转到文件</li>
+<li><code>?</code>列出当前可执行的动作</li>
+<li><code>!</code>显示<code>Errors</code>或<code>Warnings</code>，也可以<code>Ctrl+Shift+M</code></li>
+<li><code>:</code>跳转到行数，也可以<code>Ctrl+G</code>直接进入</li>
+<li><code>@</code>跳转到<code>symbol</code>(搜索变量或者函数)，也可以<code>Ctrl+Shift+O</code>直接进入</li>
+<li><code>@</code>根据分类跳转<code>symbol</code>，查找属性或函数，也可以<code>Ctrl+Shift+O</code>后输入<code>:</code>进入</li>
+<li><code>#</code>根据名字查找<code>symbol</code>，也可以<code>Ctrl+T</code></li>
+</ul>
+<p><strong>快捷键：编辑器与管理窗口</strong></p>
+<ol>
+<li>打开一个新窗口，<code>Ctrl+Shift+N</code>，这个我这里可以用</li>
+<li>关闭一个窗口，<code>Ctrl+Shift+W</code>，这里好像被<code>飞书</code>占用了。</li>
+<li>同时打开多个编辑器(查看多个文件)</li>
+<li>新建文件<code>Ctrl+N</code></li>
+<li>文件之间切换<code>Ctrl+Tab</code></li>
+<li>切出一个新的编辑器(最多3个)<code>Ctrl+\\</code></li>
+<li>左中右<code>3</code>个编辑器的快捷键<code>Ctrl+1</code>, <code>Ctrl+2</code>, <code>Ctrl+3</code></li>
+<li><code>3</code>个编辑器之间循环切换`ctrl+</li>
+<li>编辑器换位置，<code>Ctrl+k</code>然后按<code>Left</code>或<code>Right</code></li>
+</ol>
+<p><strong>代码编辑相关的快捷键</strong></p>
+<p><strong>快捷键: 格式调整</strong></p>
+<ol>
+<li>代码缩进<code>Ctlr+[</code>, <code>Ctrl+]</code></li>
+<li><code>Ctrl+C</code>, <code>Ctrl+V</code>复制或者剪切当前行</li>
+<li>代码格式化<code>Shift+Alt+F</code>或<code>Ctrl+Shift+I</code></li>
+<li>上下移动一行: <code>Alt+up</code>或<code>Alt+Down</code></li>
+<li>向上或向下复制一行: <code>Shift+Alt+up</code>或<code>Shift+Alt+Down</code></li>
+<li>在当前行下边输入一行: <code>Ctrl+enter</code></li>
+<li>在当前行上边输入一行: <code>Ctrl+Alt+enter</code></li>
+</ol>
+<p><strong>快捷键：光标相关</strong></p>
+<ol>
+<li>移动行收：home</li>
+<li>移动行尾: End</li>
+<li>移动到文件结尾: <code>Ctrl+end</code></li>
+<li>移动到文件开口: <code>Ctrl+home</code></li>
+<li>移动到定义处: <code>F12</code></li>
+<li>定义处缩略图：只看一眼不跳转过去<code>Alt+F12</code></li>
+<li>移动到后半个括号:<code>Ctrl+Shift+]</code></li>
+<li>光标到行尾: <code>Shift+end</code></li>
+<li>光标到行手: <code>Shift+home</code></li>
+<li>扩展/缩小选取范围: <code>Shift+Alt+Left</code>和<code>Shift+Alt+Right</code></li>
+<li>删除光标右侧所有字: <code>Ctrl+Delete</code></li>
+<li>多行编辑(列编辑): <code>Alt+Shift+left click</code>和<code>ctrl+Alt+down/up</code></li>
+<li>同时选中所有匹配：<code>Ctrl+Shift+L</code></li>
+<li><code>Ctlr+D</code>下一个匹配也被选中</li>
+<li>回退上一个光标操作<code>Ctrl+U</code></li>
+</ol>
+<p><strong>快捷键: 代码重构</strong></p>
+<ol>
+<li>找到所有的引用：<code>Shift+F12</code></li>
+<li>同时修改文件中所有匹配的:<code>Ctrl+F12</code></li>
+<li>重命名: 比如要修改一个方法名，可以选中后按<code>F2</code>，输入新的名字，回车，会发现所有的文件都修改了</li>
+<li>跳转到下一个<code>Error</code>或<code>warning</code>:当有多个错误时可以按<code>F8</code>逐个跳转</li>
+<li>查看<code>diff</code>，在<code>explorer</code>里选择文件右键<code>set file to compare</code>，然后需要对比文件上右键选择<code>compare with file_name_you_chose</code></li>
+</ol>
+<p><strong>快捷键: 查找替换</strong></p>
+<ol>
+<li>查找<code>Ctrl+F</code></li>
+<li>查找替换<code>Ctrl+H</code></li>
+<li>整个文件夹中查找<code>Ctrl+Shift+H</code></li>
+</ol>
+<p><strong>快捷键: 显示相关</strong></p>
+<ol>
+<li>全屏：<code>F11</code></li>
+<li>zoom in/out: <code>Ctrl + +/-</code></li>
+<li>显示资源管理器:<code>Ctrl+Shift+E</code></li>
+<li>显示搜索:<code>Ctrl+Shift+F</code></li>
+<li>显示Git: <code>Ctrl+Shift+G</code></li>
+<li>显示Debug: <code>Ctrl+Shift+D</code></li>
+<li>显示Output: <code>Ctrl+Shift+U</code></li>
+</ol>
+<h1 id="cmake">CMake</h1>
+<p><strong>前言</strong>:</p>
+<ul>
+<li><strong>CMake</strong>是一个跨平台的安装编译工具，可以用<strong>简单</strong>的语句来描述所有平台的的安装(编译过程)</li>
+<li>CMake已经是大部分<strong>C++开源项目的标配</strong></li>
+</ul>
+<h2 id="cross-platform-development">Cross-platform development</h2>
+<p><strong>没有CMAKE</strong></p>
+<ul>
+<li>不同平台没有办法统一，都是各自独立，<code>win,macos,linux</code>各自做各自的。</li>
+</ul>
+<p><strong>有CMake</strong></p>
+<ul>
+<li>可以通过<code>CMakeLists.txt</code>然后使用<code>cmake</code>工具来管理</li>
+</ul>
+<h3 id="语法特性">语法特性</h3>
+<ul>
+<li><strong>基本语法格式</strong>：指令(参数1 参数2 &hellip;)</li>
+<li>参数使用<strong>括弧</strong>括起</li>
+<li>参数之间使用空格或分号分开</li>
+<li><strong>指令</strong>是大小写无关的，<strong>参数</strong>是大小写相关的</li>
+</ul>
+<pre tabindex="0"><code>set(HELLO hello.cpp)
+add_executable(hello main.cpp hello.cpp)
+ADD_EXECUTABLE(hello main.cpp ${HELLO})
+IF(HELLO)
+if(${HELLO}) error
+
+</code></pre><ul>
+<li>变量使用<code>${}</code>方式取值，但是在<strong>IF</strong>控制语句中是直接使用变量名</li>
+</ul>
+<h2 id="重要指令和cmake常用变量">重要指令和<code>CMAKE</code>常用变量</h2>
+<h3 id="重要指令">重要指令</h3>
+<ul>
+<li>
+<p>cmake_minimum_required - <strong>指定<code>CMAKE</code>的最小版本要求</strong></p>
+<ul>
+<li>语法: cmake_minimum_required(VERSION versionNumber [FATAL_ERROR])</li>
+</ul>
+<pre tabindex="0"><code># CMake最小版本要求2.8.3
+cmake_minimum_required(VERSION 2.8.3)
+
+</code></pre></li>
+<li>
+<p>project - <strong>定义工程名称，并可制定工程支持语言</strong></p>
+<ul>
+<li>语法: project(projectname [CXX][C][Java])</li>
+</ul>
+<pre tabindex="0"><code># 指定工程名为HELLOWORLD
+project(HELLOWORLD)
+
+</code></pre></li>
+<li>
+<p>set - <strong>显示的定义变量</strong></p>
+<ul>
+<li>语法: set(VAR [VALUE][CACHE TYPE DOCSTRING [FORCE]]])</li>
+</ul>
+<pre tabindex="0"><code># 定义SRC变量，其值为syahello.cpp hello.cpp
+set(SRC sayhello.cpp hello.cpp)
+
+</code></pre></li>
+<li>
+<p>include_directories - <strong>向工程添加多个特定的头文件搜索路径&mdash;&gt;相当与指定<code>g++</code>编译器的-I参数</strong></p>
+<ul>
+<li>语法: include_directories([AFTER|BEFORE][SYSTEM] dir1 dir2 &hellip;)</li>
+</ul>
+<pre tabindex="0"><code># 将`/usr/include/myincludefolder 和 ./include 添加到头文件搜索路径
+include_direcotories(/usr/include/myincludefolder ./include)
+
+</code></pre></li>
+<li>
+<p>link_libraries - <strong>向工程添加多个特定库文件的搜索路径&mdash;&gt;相当与指定<code>g++</code>编译器的-L参数</strong></p>
+<ul>
+<li>语法: link_libraries(dir1 dir2)</li>
+</ul>
+<pre tabindex="0"><code># 将/usr/lib/mylibfolder 和 ./lib 添加到库文件的搜索路径
+link_libraries(/usr/lib/mylibfolder ./lib)
+
+</code></pre></li>
+<li>
+<p>add_library - <strong>生成库文件</strong></p>
+<ul>
+<li>语法: add_library(libname [SHARED|STATIC|MODULE][EXCLUDE_FROM_ALL] source1 source2 &hellip;)</li>
+</ul>
+<pre tabindex="0"><code># 通过变量SRC生成libhello.so共享库
+add_library(hello SHARED ${SRC})
+
+</code></pre></li>
+<li>
+<p>add_compile_options - <strong>添加编译参数</strong></p>
+<ul>
+<li>语法: add_compile_options(<!-- raw HTML omitted --> &hellip;)</li>
+</ul>
+<pre tabindex="0"><code># 添加编译参数 -Wall -std=c++11
+add_compile_options(-Wall -std=c++11 -O2)
+
+</code></pre></li>
+<li>
+<p>add_executable - <strong>生成可执行文件</strong></p>
+<ul>
+<li>语法: add_executable(exename source1 source2 &hellip; sourceN)</li>
+</ul>
+<pre tabindex="0"><code># 编译main.cpp生成可执行的main
+add_executable(main main.cpp)
+
+</code></pre></li>
+<li>
+<p>target_link_libraries - <strong>为target添加需要链接的共享库 &ndash;&gt; 相同于指定<code>g++</code>编译器的<code>l</code>参数</strong></p>
+<ul>
+<li>语法: target_link_libraries(target library1&lt;debug | optimized&gt; library2 &hellip;)</li>
+</ul>
+<pre tabindex="0"><code># 将hello动态库文件链接到可执行文件main
+target_link_libraries(main hello)
+
+</code></pre></li>
+<li>
+<p>add_subdirectory - <strong>向当前工程添加存放源文件的子目录，并可以指定中间二进制和目标二进制存放的位置</strong></p>
+<ul>
+<li>add_subdirecoty(source_dir [binary_dir][EXCLUDE_FROM_ALL])</li>
+</ul>
+<pre tabindex="0"><code># 添加src子目录，src中需要有一个CMakeLists.txt
+add_subdirectory(src)
+
+</code></pre></li>
+<li>
+<p>aux_source_directory - <strong>发现一个目录下所有的源文件并将列表存储在一个变量中，这个指令临时被用来自动构建源文件列表</strong></p>
+<ul>
+<li>语法: aux_source_diretory(dir VARIBLE)</li>
+</ul>
+<pre tabindex="0"><code># 定义SRC变量，其值为当前目录下所有的源代码文件
+aux_source_directory(. SRC)
+# 编译SRC变量所代表的源文件，生成main可执行文件
+add_executable(main ${SRC})
+
+</code></pre></li>
+</ul>
+<h3 id="cmake常用变量">CMake常用变量</h3>
+<ul>
+<li><strong>CMAKE_C_FLAGS</strong> gcc编译选项</li>
+<li><strong>CMAKE_CXX_FLAGS</strong> g++编译选项</li>
+</ul>
+<pre tabindex="0"><code># 在CMAKE_CXX_FLAGS编译选项后追加-std=c++11
+set( CMAKE_CXX_FLAGS &quot;${CMAKE_CXX_FLAGS} -std=c++11&quot; )
+
+</code></pre><ul>
+<li><strong>CMAKE_BUILD_TYPE</strong> 编译类型(Debug, Release)</li>
+</ul>
+<pre tabindex="0"><code># 设定编译类型为debug，调试时需要选择debug
+set(CMAKE_BUILD_TYPE Debug)
+# 设定编译类型为release，调试时需要选择release
+set(CMAKE_BUILD_TYPE Release)
+
+</code></pre><ul>
+<li><strong>CMAKE_BINARY_DIR</strong>
+PROJECT_BINARY_DIR
+<strong><!-- raw HTML omitted -->_BINARY_DIR</strong>
+<ol>
+<li>这三个变量指代的内容是一致的</li>
+<li>如果是<code>in source build</code>, 指得就是工程顶层目录</li>
+<li>如果是<code>out-of-source</code>编译，指得就是工程编译发生的目录</li>
+<li>PROJECT_BINARY_DIR 跟其他指令稍有区别，不过现在可以理解为一致</li>
+</ol>
+</li>
+<li><strong>CMAKE_SOURCE_DIR</strong>
+PROJECT_SOURCE_DIR
+<strong><!-- raw HTML omitted -->_SOURCE_DIR</strong>
+<ol>
+<li>这三个变量指代的内容是一致的，不论采用何种编译方式，都是工程顶层目录</li>
+<li>也就是<code>in source build</code>时，他跟<code>CMAKE_BINARY_DIR</code>等变量一致</li>
+<li><code>PROJECT_SOURCE_DIR</code> 跟其他指令稍有区别，现在也可以理解为一致</li>
+</ol>
+</li>
+<li><strong>CMAKE_C_COMPILER</strong>: 指定C编译器</li>
+<li><strong>CMAKE_CXX_COMPILER</strong>: 指定C++编译器</li>
+<li><strong>EXECUTABLE_OUTPUT_PATH</strong>: 可执行文件输出的存放路径</li>
+<li><strong>LIBRARY_OUTPUT_PATH</strong>: 库文件输出的存放路径</li>
+</ul>
+<h2 id="cmake编译工程">CMake编译工程</h2>
+<p>CMake目录结构: 项目主目录存在一个<code>CMakeLists.txt</code>文件</p>
+<p><strong>两种方式设置编译规则</strong></p>
+<ol>
+<li>包含源文件的子文件夹<strong>包含</strong>CMakeLists.txt文件，主目录的CMakelists.txt通过add_subdirectory添加子目录即可;</li>
+<li>包含源文件的子文件夹<strong>未包含</strong>CMakeLists.txt文件，子目录编译规则体现在CMakeLists.txt中</li>
+</ol>
+<h3 id="编译流程">编译流程</h3>
+<p><strong>在linux平台下使用CMake构建C/C++工程的流程如下</strong></p>
+<ul>
+<li>手动编写CMakeLists.txt</li>
+<li>执行命令<code>cmake PATH</code>生成<code>Makefile</code>（PATH是顶层CMakeLists.txt所在目录)</li>
+<li>执行命令<code>make</code></li>
+</ul>
+<pre tabindex="0"><code># importants tips
+.   # 表示当前目录
+./  # 表示当前目录
+
+..  # 表示上级目录
+../ # 表示上级目录
+
+</code></pre><h3 id="两种构建方式">两种构建方式</h3>
+<ul>
+<li>
+<p>内部构建<code>in source build</code>: 不推荐使用</p>
+<p>内部构建会在同级目录下产生一堆中间文件，这些中间文件并不是我们最终所需要的，将其和工程文件放在一起会显得杂乱无章</p>
+<pre tabindex="0"><code>## 内部构建
+
+# 在当前目录下，编译本目录的CMakeLists.txt，生成Makefile和其他文件
+cmake .
+# 执行make命令，生产target
+make
+
+</code></pre></li>
+<li>
+<p>外部构建<code>out of source build</code>: 推荐使用</p>
+<p>将编译输出文件与源文件放到不同目录中</p>
+<pre tabindex="0"><code>## 外部构建
+
+# 1. 在当前目录下，创建build文件夹
+mkdir build
+# 2. 进入到build文件夹
+cd build
+# 3. 编译上级目录的CMakeLists.txt，生成Makefile和其他文件
+cmake ..
+# 4. 执行make命令，生成target
+make
+
+</code></pre></li>
+</ul>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

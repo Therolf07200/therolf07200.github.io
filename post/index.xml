@@ -19,5 +19,241 @@ sudo apt install hugo start hugo new site &amp;lt;myblog&amp;gt; #dir_name cd my
   编写 hugo new post/blog.md  directory: content/post/blog.md  部署 hugo --theme=m10c --baseUrl=&amp;#34;https://therolf07200.github.io/&amp;#34; --buildDrafts  产生public文件夹  git cd public git init git add . git commit -m &amp;#34;MASSAGE&amp;#34; git remote add origin https://github.com/Therolf07200/therolf07200.github.io.git git push -u origin master git 小技巧 $ git config credential.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/</guid>
+      <description>C++ 官网 编译 OpenFOAM编程</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/openfoam%E7%BC%96%E7%A8%8B-fe5261ff400142f59859c40bb0542395/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/openfoam%E7%BC%96%E7%A8%8B-fe5261ff400142f59859c40bb0542395/</guid>
+      <description>OpenFOAM编程 g++的使用方法 预处理、编译、汇编和链接 预处理 g++ -E test.cpp -o test.i 编译 g++ -S test.i -o test.s 汇编 g++ -c test.s -o test.o 链接 g++ test.o -o test 这里面的逻辑要思考一下
+g++重要编译参数 g 编译带调试信息的可执行文件 # -g 选项告诉GCC产生能被GNU调试器GDB使用的调试信息 g++ -g test.cpp -o test O[n] 优化源代码 ## 优化源代码。 # -O 告诉g++对源代码进行基本优化。 # -O0 表示不做优化 # -O1 表示默认优化 # -O2 表示完成O1优化之外，还进行一些额外的调整工作 # -O3 表示包括循环展开和其他一些预处理相关的特性工作 g++ -O2 test.cpp -o test # 注意看看文件夹的inefficiency的demo,时间差距有1000倍 l和L制定库文件和库文件路径 # -l参数就是用来指定程序要链接的库，-l参数紧跟着就是库名 # 在`/lib, /usr/lib, /usr/local/lib`里的库直接用-l参数就能链接 # 链接glog库 g++ -lglog test.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/openfoam%E7%BC%96%E7%A8%8B-fe5261ff400142f59859c40bb0542395/untitled-database-b40f43c4b99447d58ff74cc202371705/%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6-00ea2cd21de34a16b42d114f175f5dda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/openfoam%E7%BC%96%E7%A8%8B-fe5261ff400142f59859c40bb0542395/untitled-database-b40f43c4b99447d58ff74cc202371705/%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6-00ea2cd21de34a16b42d114f175f5dda/</guid>
+      <description>保存文件 功能 1: 撤销操作 快捷键: Ctrl+S 快捷键 1: Ctrl+z</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/openfoam%E7%BC%96%E7%A8%8B-fe5261ff400142f59859c40bb0542395/untitled-database-b40f43c4b99447d58ff74cc202371705/%E5%85%B3%E9%97%AD%E4%BE%A7%E8%BE%B9%E6%A0%8F-db1f3b74cba44cb382af2b03796e7cf2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/openfoam%E7%BC%96%E7%A8%8B-fe5261ff400142f59859c40bb0542395/untitled-database-b40f43c4b99447d58ff74cc202371705/%E5%85%B3%E9%97%AD%E4%BE%A7%E8%BE%B9%E6%A0%8F-db1f3b74cba44cb382af2b03796e7cf2/</guid>
+      <description>关闭侧边栏 功能 1: 转到定义处 快捷键: Ctrl+B 快捷键 1: F12</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/openfoam%E7%BC%96%E7%A8%8B-fe5261ff400142f59859c40bb0542395/untitled-database-b40f43c4b99447d58ff74cc202371705/%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6-ed09cb29667c431e803586074cff85c3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/openfoam%E7%BC%96%E7%A8%8B-fe5261ff400142f59859c40bb0542395/untitled-database-b40f43c4b99447d58ff74cc202371705/%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6-ed09cb29667c431e803586074cff85c3/</guid>
+      <description>复制文件 功能 1: 粘贴文本 快捷键: Ctrl+C 快捷键 1: Ctrl+v</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/openfoam%E7%BC%96%E7%A8%8B-fe5261ff400142f59859c40bb0542395/untitled-database-b40f43c4b99447d58ff74cc202371705/%E6%89%93%E5%BC%80%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF-4c7c6257bea34b05909600bd5a7c3ee7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/openfoam%E7%BC%96%E7%A8%8B-fe5261ff400142f59859c40bb0542395/untitled-database-b40f43c4b99447d58ff74cc202371705/%E6%89%93%E5%BC%80%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF-4c7c6257bea34b05909600bd5a7c3ee7/</guid>
+      <description>打开命令面板 功能 1: 关闭当前文件 快捷键: Ctrl+Shift+p 快捷键 1: Alt+up/down</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/openfoam%E7%BC%96%E7%A8%8B-fe5261ff400142f59859c40bb0542395/untitled-database-b40f43c4b99447d58ff74cc202371705/%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF-7de6a10dad294617a036473ee40636c4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/openfoam%E7%BC%96%E7%A8%8B-fe5261ff400142f59859c40bb0542395/untitled-database-b40f43c4b99447d58ff74cc202371705/%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF-7de6a10dad294617a036473ee40636c4/</guid>
+      <description>打开终端 功能 1: 变量统一命名 快捷键: Ctrl+` 快捷键 1: F2</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/openfoam%E7%BC%96%E7%A8%8B-fe5261ff400142f59859c40bb0542395/untitled-database-b40f43c4b99447d58ff74cc202371705/%E8%B7%B3%E8%BD%AC%E6%96%87%E4%BB%B6-9b6274a1bad14e26ac2b3c522f41fe66/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/c&#43;&#43;-52395d01c7fd434a8e7956a3ea7c40c5/openfoam%E7%BC%96%E7%A8%8B-fe5261ff400142f59859c40bb0542395/untitled-database-b40f43c4b99447d58ff74cc202371705/%E8%B7%B3%E8%BD%AC%E6%96%87%E4%BB%B6-9b6274a1bad14e26ac2b3c522f41fe66/</guid>
+      <description>跳转文件 功能 1: 关闭当前文件 快捷键: Ctrl+p 快捷键 1: Ctrl+w</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/clion-3090735393514b8eb307be7eea1a7313/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/clion-3090735393514b8eb307be7eea1a7313/</guid>
+      <description>Clion </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/cmake-6fca7da7da644b5d8f93853b4c9d6e91/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/cmake-6fca7da7da644b5d8f93853b4c9d6e91/</guid>
+      <description>CMAKE Website 官网： CMake
+官方教学：CMake Tutorial — CMake 3.24.0 Documentation
+Previously knowledge 编译器 编译器：是一个根据源代码生成机器码的程序
+example:
+g++ main.cpp -o a.out objdump -D a.out | less //反汇编 make
+正文  为了解决make的以上问题，跨平台的CMake应运而生 只需写一份CMakeLists.txt，就能在调用时生成当前系统所支持的构建系统 CMake可以自动检测源文件和头文件的依赖关系，导出到Makefile文件里 Cmake具有相对比较高级的语法，内置的函数能够处理configure，install等常见需求 CMake可以自动检测当前的编译器，需要添加那些flag。比如OpenMP，只需要在CMakeLists.txt中指明target_link_libraries(a.out OpenMP::OpemMP_CXX)即可   CMakeLists.txt example:
+ cmake_minimum_required(VERSION 3.10) # set the project name project(hellocmake LANGUAGES CXX) # add the executable add_executable(a.out main.cpp hello.cpp) command:
+cmake -B build cd build make ./a.out library   有时候我们会有很多可执行文件，他们之间用到的某些功能是相同的，我们会把这些公用的功能做成一个库（library），方便大家一起共享
+  库中的函数可以被可执行文件调用，也可以被其他库调用</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/cmake-6fca7da7da644b5d8f93853b4c9d6e91/make-b57214e4cf4549cebe7150d26ccaa063/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/cmake-6fca7da7da644b5d8f93853b4c9d6e91/make-b57214e4cf4549cebe7150d26ccaa063/</guid>
+      <description>make Makefile 构建系统，依赖关系链
+ 文件越来越多时，一个个调用g++编译链会变得很麻烦 于是，发明了make程序，只需要编写文件间的依赖关系，和生成各文件的规则 command：make a.out 与用shell脚本直接写构建过程相比，make指明依赖关系的好处：   当更新 XXX.cpp 文件时只会编译XXX.o，而不需要把其他.cpp 文件重新编译 能自动并行地发起对.cpp的编译，加快编译速度 make -j 使用通配符批量生成构建规则，避免针对每个.cpp 与 .o 重复写g++(%o %.cpp)   但坏处也很明显   make在类Unix系统上是通用的，但在Windows上则不然 需要明确指明每个项目间的依赖关系，有头文件时特别头疼 make语法特别简单，不像shell或python可以做很多判断 不同编译器有不同的flag规则，为g++准备的参数可能对msvc不适用  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/gdb-e07f31b11cfc433987daa9f2a9dfe0a0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/gdb-e07f31b11cfc433987daa9f2a9dfe0a0/</guid>
+      <description>GDB 官网 GDB: The GNU Project Debugger (sourceware.org)
+GDB是什么东西？ GDB, the GNU Project debugger, allows you to see what is going on `inside&#39; another program while it executes &amp;ndash; or what another program was doing at the moment it crashed.
+GDB can do four main kinds of things (plus other things in support of these) to help you catch bugs in the act:
+ Make your program stop on specified conditions.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/gnuplot-6b07df5db7ee43f7801b8ab7e5c08f94/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/gnuplot-6b07df5db7ee43f7801b8ab7e5c08f94/</guid>
+      <description>Gnuplot 官网：http://www.gnuplot.info/
+参数   with
+  Point
+  LineType(lt)
+  LineWidth(lw)
+  Line
+  LinePoints(lp)
+  PointType(pt)
+  PointSize(ps)
+  坐标设置  [X:X] [X:X] set xrange [x1 : x2] set xlabel “x name” 设置x轴轴标，同样可设置y轴 set xtics 1.0 设置x轴主刻度，同样可设置y轴 set mxtics 2 x轴上每个主刻度中画2个分刻度，同样可以为y轴定义mytics set border 3 设为第三种边界，同样可以为上边的x轴（称为x2）和右边y（称为y2）轴进行设置，即x2tics，mx2tics，y2tics，my2tics set xtics nomirror 去掉上边x的刻度，同样可以为ytics设置 unset x2tics 去掉上边x的刻度，同样可以为ytics设置 set size square 设置x，y轴等长 set size 0.5,0.5 //设置图形的大小各为一半 plot sin(x) axes x1y2   图例位置  set key +(left / right / bottom / outside / ) set title “图名” set label ‘一段文字’ at x , y  添加图形  set arrow from x1,y1 to x2,y2 set arrow from x1,y1 to x2,y2 nuhead  设置图片格式  set size 0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/julia-a33a7c6423f44cbfb7533cee109bef9e/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/julia-a33a7c6423f44cbfb7533cee109bef9e/</guid>
+      <description>Julia </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/markdown-165bdce9c99341288b0dffdbb41eec6a/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/markdown-165bdce9c99341288b0dffdbb41eec6a/</guid>
+      <description>Markdown 官网：https://markdown.com.cn/
+编辑器：Typora
+ </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/python-3f4d4ec9a0ff4342b407577f9ab9aea0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/python-3f4d4ec9a0ff4342b407577f9ab9aea0/</guid>
+      <description>Python </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/vim-7190be0a1b8a4759b0d6e5b1fa6ca951/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/vim-7190be0a1b8a4759b0d6e5b1fa6ca951/</guid>
+      <description>VIM 官网：welcome home : vim online
+设置 .vimrc
+插件
+基本操作 移动 光标上移 ：k
+光标左移 ：h
+移动到行首 ：0
+移动到行首词 ：^
+光标下移 ：j
+光标右移 ：l
+移动到行尾：$
+数字键 + 移动键，比如： 6j ， 代表向下移动6行
+3- / 3+ 分别代表上移、下移3行行首
+3$ / 3$ 分别代表上移、下移3行行尾
+ 移动到下一个词的词首 移动到下一个大词的词首 移动到下一个词的词尾 移动到下一个大词的词尾 移动到上一个词的词首 移动到上一个大词的词首  w
+W
+e
+E
+b
+B
+ 选中1整个单词 ：bve （可视化的选择）
+ 跳转 跳转到文件第一行 ： gg
+跳转到文件最后一行： G
+上下翻页 ：Ctrl + u；Ctrl + d
+上下滚动 ：Ctrl + e；Ctrl + y</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/vim-7190be0a1b8a4759b0d6e5b1fa6ca951/%E6%8F%92%E4%BB%B6-87fabf1b2f0a470188863b310353a25b/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/vim-7190be0a1b8a4759b0d6e5b1fa6ca951/%E6%8F%92%E4%BB%B6-87fabf1b2f0a470188863b310353a25b/</guid>
+      <description>插件 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/vim-7190be0a1b8a4759b0d6e5b1fa6ca951/%E8%AE%BE%E7%BD%AE-vimrc-0aa310dc27b44c1ca78db4ca421bd1db/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/vim-7190be0a1b8a4759b0d6e5b1fa6ca951/%E8%AE%BE%E7%BD%AE-vimrc-0aa310dc27b44c1ca78db4ca421bd1db/</guid>
+      <description>设置 .vimrc set mouse=a set number nnoremap &amp;lt;F4&amp;gt; :！:wa&amp;lt;CR&amp;gt; &amp;quot;nnoremap &amp;lt;F5&amp;gt; :！:wa&amp;lt;CR&amp;gt;:!g++ % -o /tmp/a.out &amp;amp;&amp;amp; /tmp/a.out&amp;lt;CR&amp;gt; nnoremap &amp;lt;F5&amp;gt; :make&amp;lt;CR&amp;gt;&amp;lt;CR&amp;gt;&amp;lt;CR&amp;gt; nnoremap &amp;lt;F8&amp;gt; :sh&amp;lt;CR&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-cfc22546c1924df2bbad6bab172d3682/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-cfc22546c1924df2bbad6bab172d3682/</guid>
+      <description>数据结构与算法 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://therolf07200.github.io/post/programming-/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-714e7753a216482a802150db391ce47d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/programming-/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-714e7753a216482a802150db391ce47d/</guid>
+      <description>计算机组成原理 </description>
+    </item>
+    
   </channel>
 </rss>
