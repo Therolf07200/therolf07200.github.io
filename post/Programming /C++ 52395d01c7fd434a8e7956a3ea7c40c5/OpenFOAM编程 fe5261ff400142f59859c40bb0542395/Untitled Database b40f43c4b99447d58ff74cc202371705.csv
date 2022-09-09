@@ -1,7 +1,0 @@
-﻿功能,快捷键,功能 1,快捷键 1
-跳转文件,Ctrl+p,关闭当前文件,Ctrl+w
-打开命令面板,Ctrl+Shift+p,关闭当前文件,Alt+up/down
-打开终端,Ctrl+`,变量统一命名,F2
-关闭侧边栏,Ctrl+B,转到定义处,F12
-复制文件,Ctrl+C,粘贴文本,Ctrl+v
-保存文件,Ctrl+S,撤销操作,Ctrl+z

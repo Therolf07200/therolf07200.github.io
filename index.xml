@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>林永晖</title>
+    <title>LinYonghui</title>
     <link>https://therolf07200.github.io/</link>
-    <description>Recent content on 林永晖</description>
+    <description>Recent content on LinYonghui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Sep 2022 20:56:45 +0800</lastBuildDate><atom:link href="https://therolf07200.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -17,35 +17,6 @@
 sudo apt install hugo start hugo new site &amp;lt;myblog&amp;gt; #dir_name cd myblog themes 官网 git clone theme 本地启动 hugo server -t m10c --buildDrafts   theme 以m10c为例
   Ctrl +C 结束
   编写 hugo new post/blog.md  directory: content/post/blog.md  部署 hugo --theme=m10c --baseUrl=&amp;#34;https://therolf07200.github.io/&amp;#34; --buildDrafts  产生public文件夹  git cd public git init git add . git commit -m &amp;#34;MASSAGE&amp;#34; git remote add origin https://github.com/Therolf07200/therolf07200.github.io.git git push -u origin master git 小技巧 $ git config credential.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://therolf07200.github.io/post/cmake/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://therolf07200.github.io/post/cmake/</guid>
-      <description>CMAKE Website 官网： CMake
-官方教学：CMake Tutorial — CMake 3.24.0 Documentation
-Previously knowledge 编译器 编译器：是一个根据源代码生成机器码的程序
-example:
-g++ main.cpp -o a.out objdump -D a.out | less //反汇编 make
-正文  为了解决make的以上问题，跨平台的CMake应运而生 只需写一份CMakeLists.txt，就能在调用时生成当前系统所支持的构建系统 CMake可以自动检测源文件和头文件的依赖关系，导出到Makefile文件里 Cmake具有相对比较高级的语法，内置的函数能够处理configure，install等常见需求 CMake可以自动检测当前的编译器，需要添加那些flag。比如OpenMP，只需要在CMakeLists.txt中指明target_link_libraries(a.out OpenMP::OpemMP_CXX)即可   CMakeLists.txt example:
- cmake_minimum_required(VERSION 3.10) # set the project name project(hellocmake LANGUAGES CXX) # add the executable add_executable(a.out main.cpp hello.cpp) command:
-cmake -B build cd build make ./a.out library   有时候我们会有很多可执行文件，他们之间用到的某些功能是相同的，我们会把这些公用的功能做成一个库（library），方便大家一起共享
-  库中的函数可以被可执行文件调用，也可以被其他库调用</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://therolf07200.github.io/post/gdb/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://therolf07200.github.io/post/gdb/</guid>
-      <description>GDB 官网 GDB: The GNU Project Debugger (sourceware.org)
-GDB是什么东西？ GDB, the GNU Project debugger, allows you to see what is going on `inside&#39; another program while it executes &amp;ndash; or what another program was doing at the moment it crashed.
-GDB can do four main kinds of things (plus other things in support of these) to help you catch bugs in the act:
- Make your program stop on specified conditions.</description>
     </item>
     
   </channel>
