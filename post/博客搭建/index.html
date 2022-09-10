@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>博客搭建 // LinYonghui</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://therolf07200.github.io/css/main.min.4a7ec8660f9a44b08c4da97c5f2e31b1192df1d4d0322e65c0dbbc6ecb1b863f.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="博客搭建"/>
+<meta name="twitter:description" content="个人blog搭建 hugo linux平台安装
+sudo apt install hugo start hugo new site &lt;myblog&gt; #dir_name cd myblog themes 官网 git clone theme 本地启动 hugo server -t m10c --buildDrafts   theme 以m10c为例
+  Ctrl &#43;C 结束
+  编写 hugo new post/blog.md  directory: content/post/blog.md  部署 hugo --theme=m10c --baseUrl=&#34;https://therolf07200.github.io/&#34; --buildDrafts  产生public文件夹  git cd public git init git add . git commit -m &#34;MASSAGE&#34; git remote add origin https://github.com/Therolf07200/therolf07200.github.io.git git push -u origin master git 小技巧 $ git config credential."/>
+
+    <meta property="og:title" content="博客搭建" />
+<meta property="og:description" content="个人blog搭建 hugo linux平台安装
+sudo apt install hugo start hugo new site &lt;myblog&gt; #dir_name cd myblog themes 官网 git clone theme 本地启动 hugo server -t m10c --buildDrafts   theme 以m10c为例
+  Ctrl &#43;C 结束
+  编写 hugo new post/blog.md  directory: content/post/blog.md  部署 hugo --theme=m10c --baseUrl=&#34;https://therolf07200.github.io/&#34; --buildDrafts  产生public文件夹  git cd public git init git add . git commit -m &#34;MASSAGE&#34; git remote add origin https://github.com/Therolf07200/therolf07200.github.io.git git push -u origin master git 小技巧 $ git config credential." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://therolf07200.github.io/post/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-09-08T20:56:45+08:00" />
+<meta property="article:modified_time" content="2022-09-08T20:56:45+08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://therolf07200.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>LinYonghui</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">博客搭建</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Sep 8, 2022
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="个人blog搭建">个人blog搭建</h1>
+<h2 id="hugo">hugo</h2>
+<p>linux平台安装</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt install hugo
+</code></pre></div><h2 id="start">start</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo new site &lt;myblog&gt;  <span style="color:#75715e">#dir_name</span>
+cd myblog
+
+</code></pre></div><h2 id="themes--官网httpsthemesgohugoio">themes  <a href="https://themes.gohugo.io/">官网</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone theme
+</code></pre></div><h2 id="本地启动">本地启动</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo server -t m10c --buildDrafts
+</code></pre></div><ul>
+<li>
+<p>theme 以m10c为例</p>
+</li>
+<li>
+<p>Ctrl +C 结束</p>
+</li>
+</ul>
+<h2 id="编写">编写</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo new post/blog.md
+</code></pre></div><ul>
+<li>directory: content/post/blog.md</li>
+</ul>
+<h2 id="部署">部署</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo --theme<span style="color:#f92672">=</span>m10c --baseUrl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://therolf07200.github.io/&#34;</span> --buildDrafts
+</code></pre></div><ul>
+<li>产生public文件夹</li>
+</ul>
+<h2 id="git">git</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd public
+git init
+git add .
+git commit -m <span style="color:#e6db74">&#34;MASSAGE&#34;</span>
+git remote add origin https://github.com/Therolf07200/therolf07200.github.io.git
+git push -u origin master
+
+</code></pre></div><h3 id="git-小技巧">git 小技巧</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git config credential.helper store
+$ git push https://github.com/owner/repo.git
+<span style="color:#75715e"># 然后输入用户名和密码</span>
+Username <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;https://github.com&#39;</span>: &lt;USERNAME&gt;
+Password <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;https://USERNAME@github.com&#39;</span>: &lt;PASSWORD&gt;
+
+</code></pre></div><p>这样下次再git push时，就不用输入用户和密码了。
+还可以设置记住时间：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git config --global credential.helper <span style="color:#e6db74">&#39;cache --timeout 7200&#39;</span>  <span style="color:#75715e">#  这里设置账号信息被记住7200秒，两个小时。</span>
+
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

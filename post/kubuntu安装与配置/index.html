@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Kubuntu安装与配置 // LinYonghui</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://therolf07200.github.io/css/main.min.4a7ec8660f9a44b08c4da97c5f2e31b1192df1d4d0322e65c0dbbc6ecb1b863f.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kubuntu安装与配置"/>
+<meta name="twitter:description" content="kubuntu安装   官网
+  Download
+  kubuntu 配置 换源 清华源
+Ubuntu 的软件源配置文件是 /etc/apt/sources.list
+替换内容即可
+ SHIFT &#43; INSERT 可在vim中粘贴  中文打字法安装   fcitx安装
+sudo apt install fcitx reboot #重启   配置
+im-comfig -&gt; activate Flexible Iput Method Framework (fcitx)@ -&gt;OK -&gt;OK
+  fcitx-googlepinyin安装
+sudo apt install fcitx-googlepinyin   Configuration
+fcitx-configtool reboot #可能需要重启   切换打字法
+Ctrol &#43; SPACE
+  安装zsh   安装zsh"/>
+
+    <meta property="og:title" content="Kubuntu安装与配置" />
+<meta property="og:description" content="kubuntu安装   官网
+  Download
+  kubuntu 配置 换源 清华源
+Ubuntu 的软件源配置文件是 /etc/apt/sources.list
+替换内容即可
+ SHIFT &#43; INSERT 可在vim中粘贴  中文打字法安装   fcitx安装
+sudo apt install fcitx reboot #重启   配置
+im-comfig -&gt; activate Flexible Iput Method Framework (fcitx)@ -&gt;OK -&gt;OK
+  fcitx-googlepinyin安装
+sudo apt install fcitx-googlepinyin   Configuration
+fcitx-configtool reboot #可能需要重启   切换打字法
+Ctrol &#43; SPACE
+  安装zsh   安装zsh" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://therolf07200.github.io/post/kubuntu%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-09-10T13:00:47+08:00" />
+<meta property="article:modified_time" content="2022-09-10T13:00:47+08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://therolf07200.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>LinYonghui</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Kubuntu安装与配置</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Sep 10, 2022
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="kubuntu安装">kubuntu安装</h1>
+<ul>
+<li>
+<p><a href="https://kubuntu.org/">官网</a></p>
+</li>
+<li>
+<p><a href="https://kubuntu.org/getkubuntu/">Download</a></p>
+</li>
+</ul>
+<h1 id="kubuntu-配置">kubuntu 配置</h1>
+<h2 id="换源">换源</h2>
+<p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">清华源</a></p>
+<p>Ubuntu 的软件源配置文件是 /etc/apt/sources.list</p>
+<p>替换内容即可</p>
+<ul>
+<li>SHIFT + INSERT 可在vim中粘贴</li>
+</ul>
+<h2 id="中文打字法安装">中文打字法安装</h2>
+<ol>
+<li>
+<p>fcitx安装</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt install fcitx
+reboot  <span style="color:#75715e">#重启</span>
+</code></pre></div></li>
+<li>
+<p>配置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">im-comfig
+</code></pre></div><p>-&gt; activate Flexible Iput Method Framework (fcitx)@
+-&gt;OK
+-&gt;OK</p>
+</li>
+<li>
+<p>fcitx-googlepinyin安装</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt install fcitx-googlepinyin
+</code></pre></div></li>
+<li>
+<p>Configuration</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">fcitx-configtool
+reboot  <span style="color:#75715e">#可能需要重启</span>
+
+</code></pre></div></li>
+<li>
+<p>切换打字法</p>
+<p>Ctrol + SPACE</p>
+</li>
+</ol>
+<h2 id="安装zsh">安装zsh</h2>
+<ol>
+<li>
+<p>安装zsh</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt install zsh
+zsh
+q  <span style="color:#75715e">#Quit and do noting.the function will be run again next time</span>
+bash
+zsh --version  <span style="color:#75715e">#查看版本</span>
+</code></pre></div></li>
+<li>
+<p>安装oh-my-zsh：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#Github</span>
+sh -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#75715e">#Gitee</span>
+sh -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div></li>
+<li>
+<p>zsh主题</p>
+<p>~/.zshrc</p>
+</li>
+</ol>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

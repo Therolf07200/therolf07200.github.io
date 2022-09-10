@@ -6,13 +6,34 @@
     <description>Recent content in Posts on LinYonghui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Sep 2022 20:56:45 +0800</lastBuildDate><atom:link href="https://therolf07200.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Sep 2022 13:00:47 +0800</lastBuildDate><atom:link href="https://therolf07200.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Build_blog</title>
-      <link>https://therolf07200.github.io/post/build_blog/</link>
+      <title>Kubuntu安装与配置</title>
+      <link>https://therolf07200.github.io/post/kubuntu%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sat, 10 Sep 2022 13:00:47 +0800</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/kubuntu%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
+      <description>kubuntu安装   官网
+  Download
+  kubuntu 配置 换源 清华源
+Ubuntu 的软件源配置文件是 /etc/apt/sources.list
+替换内容即可
+ SHIFT + INSERT 可在vim中粘贴  中文打字法安装   fcitx安装
+sudo apt install fcitx reboot #重启   配置
+im-comfig -&amp;gt; activate Flexible Iput Method Framework (fcitx)@ -&amp;gt;OK -&amp;gt;OK
+  fcitx-googlepinyin安装
+sudo apt install fcitx-googlepinyin   Configuration
+fcitx-configtool reboot #可能需要重启   切换打字法
+Ctrol + SPACE
+  安装zsh   安装zsh</description>
+    </item>
+    
+    <item>
+      <title>博客搭建</title>
+      <link>https://therolf07200.github.io/post/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Thu, 08 Sep 2022 20:56:45 +0800</pubDate>
       
-      <guid>https://therolf07200.github.io/post/build_blog/</guid>
+      <guid>https://therolf07200.github.io/post/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
       <description>个人blog搭建 hugo linux平台安装
 sudo apt install hugo start hugo new site &amp;lt;myblog&amp;gt; #dir_name cd myblog themes 官网 git clone theme 本地启动 hugo server -t m10c --buildDrafts   theme 以m10c为例
   Ctrl +C 结束
