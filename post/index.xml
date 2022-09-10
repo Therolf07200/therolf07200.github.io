@@ -16,19 +16,7 @@
       <description>VIM使用入门 官网
 设置 .vimrc
 插件
-VIM配置 crul-fLo ~/.vim/autolaod/plug.vim --create-dirs \ https://raw.githubusercontent/junegunn/vim-plug/master/plug.vim 基本操作 移动 光标上移 ：k
-光标左移 ：h
-移动到行首 ：0
-移动到行首词 ：^
-光标下移 ：j
-光标右移 ：l
-移动到行尾：$
-数字键 + 移动键，比如： 6j ， 代表向下移动6行
-3- / 3+ 分别代表上移、下移3行行首
-3$ / 3$ 分别代表上移、下移3行行尾
- 移动到下一个词的词首 w 移动到下一个大词的词首 W 移动到下一个词的词尾 e 移动到下一个大词的词尾 E 移动到上一个词的词首 b 移动到上一个大词的词首 B   选中1整个单词 ：bve （可视化的选择）  跳转   跳转到文件第一行 ： gg
-  跳转到文件最后一行： G
-  上下翻页 ：Ctrl + u；Ctrl + d</description>
+VIM配置 curl -fLo ~/.vim/autolaod/plug.vim --create-dirs \ https://raw.githubusercontent/junegunn/vim-plug/master/plug.vim let mapleader=&amp;#34; &amp;#34; syntax on set number set cursorline set mouse=a set hlsearch set incsearch set smartcase set ignorecase set scrolloff=10 set autoindent map s &amp;lt;nop&amp;gt; map S :w&amp;lt;CR&amp;gt; map Q :wq&amp;lt;CR&amp;gt; map R :source $MYVIMRC&amp;lt;CR&amp;gt; noremap &amp;lt;LEADER&amp;gt;&amp;lt;CR&amp;gt; :nohlsearch&amp;lt;CR&amp;gt; noremap K 5k noremap J 5j map sv :vsplit&amp;lt;CR&amp;gt; map sh :split&amp;lt;CR&amp;gt; call plug#begin(&amp;#39;~/.vim/plugged&amp;#39;) Plug &amp;#39;vim-airline/vim-airline&amp;#39; Plug &amp;#39;ghifarit53/tokyonight-vim&amp;#39; call plug#end() colorscheme tokyonight 基本操作 移动 光标上移 ：k</description>
     </item>
     
     <item>
