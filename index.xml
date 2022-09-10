@@ -6,7 +6,31 @@
     <description>Recent content on Yonghui Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Sep 2022 13:00:47 +0800</lastBuildDate><atom:link href="https://therolf07200.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Sep 2022 23:01:10 +0800</lastBuildDate><atom:link href="https://therolf07200.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim使用入门</title>
+      <link>https://therolf07200.github.io/post/vim%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sat, 10 Sep 2022 23:01:10 +0800</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/vim%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/</guid>
+      <description>VIM使用入门 官网
+设置 .vimrc
+插件
+VIM配置 crul-fLo ~/.vim/autolaod/plug.vim --create-dirs \ https://raw.githubusercontent/junegunn/vim-plug/master/plug.vim 基本操作 移动 光标上移 ：k
+光标左移 ：h
+移动到行首 ：0
+移动到行首词 ：^
+光标下移 ：j
+光标右移 ：l
+移动到行尾：$
+数字键 + 移动键，比如： 6j ， 代表向下移动6行
+3- / 3+ 分别代表上移、下移3行行首
+3$ / 3$ 分别代表上移、下移3行行尾
+ 移动到下一个词的词首 w 移动到下一个大词的词首 W 移动到下一个词的词尾 e 移动到下一个大词的词尾 E 移动到上一个词的词首 b 移动到上一个大词的词首 B   选中1整个单词 ：bve （可视化的选择）  跳转   跳转到文件第一行 ： gg
+  跳转到文件最后一行： G
+  上下翻页 ：Ctrl + u；Ctrl + d</description>
+    </item>
+    
     <item>
       <title>Kubuntu安装与配置</title>
       <link>https://therolf07200.github.io/post/kubuntu%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
