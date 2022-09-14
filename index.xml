@@ -6,7 +6,20 @@
     <description>Recent content on Yonghui Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Sep 2022 23:01:10 +0800</lastBuildDate><atom:link href="https://therolf07200.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Sep 2022 20:01:45 +0800</lastBuildDate><atom:link href="https://therolf07200.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown</title>
+      <link>https://therolf07200.github.io/post/markdown/</link>
+      <pubDate>Wed, 14 Sep 2022 20:01:45 +0800</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/markdown/</guid>
+      <description>Markdown 官方教程
+Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，Markdown文件的后缀名便是“.md”。
+一般来说，markdown在编写过程中，左边窗口用来编写MD语法与内容，右边窗口实时预览渲染出的排版效果 。不过，有些对Markdown优化的比较好的软件，可在编写过程中实时渲染排版效果，编写体验比较丝滑。
+MarkDown语法的简洁而特性，会带来一些特点：编写者只能控制排版的种类，具体的样式由编译平台决定。
+特点：详细介绍  专注于文字内容； 纯文本，易读易写，可以方便地纳入版本控制； 语法简单，没有什么学习成本，能轻松在码字的同时做出美观大方的排版。     基本语法速查 语法概览     标题(heading) # H1## H2### h3   粗体(bold) **blod text**   斜体(Italic)  *Italicized text*   引用快(Blockquote) &amp;gt; blockquote    有序列表（Ordered List） 1. first item 2. second item   无序列表(Unordered List) * first item * second item * or -   代码(Code) ``code `   分隔线(Horizonal Rule) ---   链接(Link) [title](https://google.</description>
+    </item>
+    
     <item>
       <title>Vim使用入门</title>
       <link>https://therolf07200.github.io/post/vim%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/</link>
@@ -46,10 +59,10 @@ Ctrol + SPACE
       <pubDate>Thu, 08 Sep 2022 20:56:45 +0800</pubDate>
       
       <guid>https://therolf07200.github.io/post/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
-      <description>个人blog搭建 hugo linux平台安装
+      <description>个人blog搭建 参考视频 hugo linux平台安装
 sudo apt install hugo start hugo new site &amp;lt;myblog&amp;gt; #dir_name cd myblog themes 官网 git clone theme 本地启动 hugo server -t m10c --buildDrafts   theme 以m10c为例
   Ctrl +C 结束
-  编写 hugo new post/blog.md  directory: content/post/blog.md  部署 hugo --theme=m10c --baseUrl=&amp;#34;https://therolf07200.github.io/&amp;#34; --buildDrafts  产生public文件夹  git cd public git init git add . git commit -m &amp;#34;MASSAGE&amp;#34; git remote add origin https://github.com/Therolf07200/therolf07200.github.io.git git push -u origin master git 小技巧 $ git config credential.</description>
+  编写 hugo new post/blog.md  directory: content/post/blog.md  部署 hugo --theme=m10c --baseUrl=&amp;#34;https://therolf07200.github.io/&amp;#34; --buildDrafts  产生public文件夹  git cd public git init git add . git commit -m &amp;#34;MASSAGE&amp;#34; git remote add origin https://github.</description>
     </item>
     
   </channel>
