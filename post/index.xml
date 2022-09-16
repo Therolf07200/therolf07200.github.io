@@ -6,7 +6,25 @@
     <description>Recent content in Posts on Yonghui Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Sep 2022 20:01:45 +0800</lastBuildDate><atom:link href="https://therolf07200.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Sep 2022 00:36:47 +0800</lastBuildDate><atom:link href="https://therolf07200.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Timer</title>
+      <link>https://therolf07200.github.io/post/timer/</link>
+      <pubDate>Fri, 16 Sep 2022 00:36:47 +0800</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/timer/</guid>
+      <description>C++ Timer Timer class Timer.h #pragma once  #include &amp;lt;chrono&amp;gt;#include &amp;lt;iostream&amp;gt; class Timer { public: Timer(); ~Timer(); void Stop(); private: std::chrono::time_point&amp;lt;std::chrono::high_resolution_clock&amp;gt; m_StartTimepoint; }; Timer.cpp #include &amp;#34;Timer.h&amp;#34; Timer::Timer() { m_StartTimepoint = std::chrono::high_resolution_clock::now(); } Timer::~Timer() { Stop(); } void Timer::Stop() { auto endTimepoint = std::chrono::high_resolution_clock::now(); //convert to milliseconds  auto start = std::chrono::time_point_cast&amp;lt;std::chrono::milliseconds&amp;gt;(m_StartTimepoint).time_since_epoch().count(); auto stop = std::chrono::time_point_cast&amp;lt;std::chrono::milliseconds&amp;gt;(endTimepoint).time_since_epoch().count(); auto duration = stop -start; double ms = duration * 1E-3; std::cout &amp;lt;&amp;lt; duration &amp;lt;&amp;lt; &amp;#34; us (&amp;#34; &amp;lt;&amp;lt; ms &amp;lt;&amp;lt; &amp;#34; ms)\n&amp;#34;; } </description>
+    </item>
+    
+    <item>
+      <title>IO</title>
+      <link>https://therolf07200.github.io/post/io/</link>
+      <pubDate>Thu, 15 Sep 2022 23:50:32 +0800</pubDate>
+      
+      <guid>https://therolf07200.github.io/post/io/</guid>
+      <description>C++ Method how to read file how to write file </description>
+    </item>
+    
     <item>
       <title>Markdown</title>
       <link>https://therolf07200.github.io/post/markdown/</link>
@@ -17,7 +35,7 @@
 Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，Markdown文件的后缀名便是“.md”。
 一般来说，markdown在编写过程中，左边窗口用来编写MD语法与内容，右边窗口实时预览渲染出的排版效果 。不过，有些对Markdown优化的比较好的软件，可在编写过程中实时渲染排版效果，编写体验比较丝滑。
 MarkDown语法的简洁而特性，会带来一些特点：编写者只能控制排版的种类，具体的样式由编译平台决定。
-特点：详细介绍  专注于文字内容； 纯文本，易读易写，可以方便地纳入版本控制； 语法简单，没有什么学习成本，能轻松在码字的同时做出美观大方的排版。     基本语法速查 语法概览     标题(heading) # H1## H2### h3   粗体(bold) **blod text**   斜体(Italic)  *Italicized text*   引用快(Blockquote) &amp;gt; blockquote    有序列表（Ordered List） 1. first item 2. second item   无序列表(Unordered List) * first item * second item * or -   代码(Code) ``code `   分隔线(Horizonal Rule) ---   链接(Link) [title](https://google.</description>
+特点：详细介绍  专注于文字内容； 纯文本，易读易写，可以方便地纳入版本控制； 语法简单，没有什么学习成本，能轻松在码字的同时做出美观大方的排版。     基本语法速查 语法概览     标题(heading) # H1 ## H2 ### h3   粗体(bold) **blod text**   斜体(Italic)  *Italicized text*   引用快(Blockquote) &amp;gt; blockquote    有序列表（Ordered List） 1. first item 2. second item   无序列表(Unordered List) * first item * second item * or -   代码(Code) code    分隔线(Horizonal Rule) ---   链接(Link) [title](https://google.</description>
     </item>
     
     <item>
